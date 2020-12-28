@@ -2,9 +2,11 @@ package com.pratap.mockito.dao.impl;
 
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Service;
+
 import com.pratap.mockito.dao.OrderDAO;
 import com.pratap.mockito.dto.Order;
-
+@Service
 public class OrderDAOImpl implements OrderDAO {
 
 	@Override
