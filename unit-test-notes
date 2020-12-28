@@ -1,0 +1,7 @@
+Mocking:
+Stubbing, setting the expectations and finally verify
+
+Order Processor Use case;
+Client -> OrderProcessor(placeOrder, cancelOrder and deleteOrder)
+Layers;
+OrderBO(placeOrder(), cancelOrder(), deleteOrder()) -> OrderDAO(create, read, update, delete) -> DB
