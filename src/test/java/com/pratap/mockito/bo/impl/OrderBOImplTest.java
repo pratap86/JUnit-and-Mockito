@@ -14,6 +14,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyInt;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.times;
+
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.pratap.mockito.bo.exception.BOException;
@@ -52,7 +56,10 @@ class OrderBOImplTest {
 		when(orderDAO.create(any(Order.class))).thenReturn(Integer.valueOf(0));
 		boolean result = orderBOImpl.placeOrder(order);
 		assertFalse(result);
-		verify(orderDAO).create(order);
+		verify(orderDAO).create(order);// by default verify method check the only one time execution of particular method
+		verify(orderDAO, times(1)).create(order);
+		verify(orderDAO, atLeastOnce()).create(order);
+		verify(orderDAO, atLeast(1)).create(order);
 		
 	}
 	
