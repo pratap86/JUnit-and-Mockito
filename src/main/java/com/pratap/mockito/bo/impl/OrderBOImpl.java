@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.pratap.mockito.bo.OrderBO;
 import com.pratap.mockito.bo.exception.BOException;
+import com.pratap.mockito.constant.OrderStatus;
 import com.pratap.mockito.dao.OrderDAO;
 import com.pratap.mockito.dto.Order;
 
@@ -19,8 +20,8 @@ public class OrderBOImpl implements OrderBO {
 	@Override
 	public boolean placeOrder(Order order) throws BOException {
 		try {
-			int id = orderDAO.create(order);
-			if(id == 0) return false;
+			int result = orderDAO.create(order);
+			if(result == 0) return false;
 		} catch (SQLException e) {
 			throw new BOException(e);
 		}
@@ -29,12 +30,29 @@ public class OrderBOImpl implements OrderBO {
 
 	@Override
 	public boolean cancelOrder(int id) throws BOException {
-		return false;
+		
+		try {
+			Order order = orderDAO.read(id);
+			order.setStatus(OrderStatus.CANCELLED);
+			int result = orderDAO.update(order);
+			if(result == 0) return false;
+			
+		} catch (SQLException e) {
+			throw new BOException(e);
+		}
+		return true;
 	}
 
 	@Override
 	public boolean deleteOrder(int id) throws BOException {
-		return false;
+		
+		try {
+			int result = orderDAO.delete(id);
+			if(result == 0) return false;
+		} catch (SQLException e) {
+			throw new BOException(e);
+		}
+		return true;
 	}
 
 }
