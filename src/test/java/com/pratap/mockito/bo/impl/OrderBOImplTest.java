@@ -42,7 +42,7 @@ class OrderBOImplTest {
 	void testPlaceOrder_Should_Create_An_Order() throws SQLException, BOException {
 
 		Order order = new Order();
-		when(orderDAO.create(any(Order.class))).thenReturn(Integer.valueOf(1));
+		when(orderDAO.create(any(Order.class))).thenReturn(Integer.valueOf(1));//any(Order.class) create a Dummy Order object on the Fly.
 		boolean result = orderBOImpl.placeOrder(order);
 		assertTrue(result);
 		verify(orderDAO).create(order);
