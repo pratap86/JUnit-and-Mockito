@@ -1,2 +1,2 @@
 # JUnit-and-Mockito
-JUnit 5, Mockito, PowerMockito
+JUnit 5, Mockito, PowerMockito, code coverage
