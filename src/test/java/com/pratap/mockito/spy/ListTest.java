@@ -115,6 +115,7 @@ class ListTest {
 		System.out.println("mockList.size(), After overriding : "+ mockList.size());
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	void testSpying() {
 		List<String> mockList = spy(ArrayList.class);
