@@ -1,6 +1,10 @@
 # JUnit-and-Mockito
 JUnit 5, Mockito, PowerMockito, code coverage
 
+Gradle build commands: ./gradlew --i clean build
+
+<b>gradlew: Permission Denied: chmod +x gradlew</b>
+
 <p>when you mocked an Interface or Class, entire behaviour of that interface or class get lossed. A mock does not retain behaviour(code) of original class.
 unlike a <b>Spy</b>, by default retain behaviour(code) of original class. 
 </p>
