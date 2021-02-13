@@ -1,6 +1,6 @@
 package com.pratap.junit5.service.impl;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -28,7 +28,7 @@ class GreetingServiceImplTest {
 		LOGGER.info("testGreetShouldRetunAValidOutput");
 		String greet = greetingService.greet("Test");
 		assertNotNull(greet);
-		assertThat(greet).isEqualTo("Hello! Test");
+		assertThat(greet, equalTo("Hello! Test"));
 	}
 	
 	@Test

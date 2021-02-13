@@ -1,6 +1,4 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.1'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
 }
 
@@ -13,8 +11,16 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile 'org.springframework:spring-web:5.3.3'
+	compile 'org.springframework:spring-context:5.3.3'
+	compile 'org.slf4j:slf4j-api:1.7.30'
+	compile 'org.slf4j:slf4j-simple:1.7.30'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.7.7'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+	testImplementation 'org.hamcrest:hamcrest-library:2.2'
+	
+	
 }
 
 test {
