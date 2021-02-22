@@ -1,3 +1,5 @@
+## JUnit4 released in 2006
+## JUnit5 released in September 2017
 # JUnit-and-Mockito
 JUnit 5, Mockito, PowerMockito, code coverage
 
@@ -64,3 +66,7 @@ void doubleParameterisedValueTestIsDietRecommended_Should_ReturnTrue_When_dietRe
 		
 }
 ```
+- If a method executed by multiple threads, use <b>@RepeatedTest(value = 10, name=RepeatedTest.LONG_DISPLAY_NAME)</b>
+- Performance Test with JUnit5
+  - Assumptions
+  - assertTimeout 
