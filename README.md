@@ -46,3 +46,21 @@ Mocks
 Fake
 
 Spies
+## JUnit 5
+- org.junit.jupiter.api.Assertions.assertAll - use when using multiple assertEquals wrt verify object fields equality(two different objects are created & they are not equal to each other) and you don't know which assertion are going to be failed.
+- import static org.junit.jupiter.api.Assertions.assertArrayEquals - use wrt array comparision
+- import org.junit.jupiter.params.ParameterizedTest;
+
+```ruby
+@ParameterizedTest(name = "weight={0}, height={1}")
+@CsvSource(value = {"89.0, 1.72", "95.0, 1.75", "110.0, 1.78"})
+void doubleParameterisedValueTestIsDietRecommended_Should_ReturnTrue_When_dietRecommended(Double coderWeight, Double coderHeight) {
+		double weight = coderWeight;
+		double height = coderHeight;
+		
+		boolean recommended = BMICalculator.isDietRecommended(weight, height);
+		
+		assertTrue(recommended, "recommended should true");
+		
+}
+```
