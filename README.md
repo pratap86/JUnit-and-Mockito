@@ -69,4 +69,18 @@ void doubleParameterisedValueTestIsDietRecommended_Should_ReturnTrue_When_dietRe
 - If a method executed by multiple threads, use <b>@RepeatedTest(value = 10, name=RepeatedTest.LONG_DISPLAY_NAME)</b>
 - Performance Test with JUnit5
   - Assumptions
-  - assertTimeout 
+  - assertTimeout
+
+## Mockito 3 with JUnit 5
+ - Mocking Frameworks are mockito, JMockito & EasyMock
+ - By default Mockito returns the nice mocks that returns default values like wrt a List return an empty list, wrt an Object return null Object, wrt to premitive/boolean returns 0/false premitive
+ - Mockito Matchers Rules
+  - Use any() for objects, For premitives use anyDouble(), anyBoolean() etc.
+  - use eq() to mix matchers and concrete values: method(any(), eq(400.0))
+  - For nullable String use any()
+ - mock = dummy object with no real logic
+ - spy = real object with real logic that we can modify
+ - mocks : when(mock.method()).thenReturn()
+ - spies : doReturn().when(spy).method()
+ - ArgumentCapture work as Matchers
+ - Strict Stubbing through Linient 
